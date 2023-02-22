@@ -1,0 +1,39 @@
+{% include "header.html" %}
+<!--Main-->
+<div class="container my-5 border border-5" style="overflow: scroll;" >
+    <h1>View by Student Name</h1>
+    ​<table class="table table-light table-striped" >
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Father's Name</th>
+            <th>Mother's Name</th>
+            <th>Phone No.</th>
+            <th>Fee</th>
+            <th>Course</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Registration No.</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for a in namedata %}
+              <tr>
+                <td>{{a.id}}</td>
+                <td>{{a.name}}</td>
+                <td>{{a.fname}}</td>
+                <td>{{a.mname}}</td>
+                <td>{{a.phone_no}}</td>
+                <td>{{a.fee}}</td>
+                <td>{{a.course}}</td>
+                <td>{{a.gender}}</td>
+                <td>{{a.add}}</td>
+                <td>{{a.regno}}</td>
+              </tr>
+              {% endfor %}
+        </tbody>
+    </table>
+  </div>
+<!--Main End-->
+{% include "footer.html" %}

@@ -1,0 +1,148 @@
+{% include "header.html" %}
+        <!--Main-->
+        <div class="container border border-3" style="width:70%;">
+            <div class="mt-3 jumbotron justify-content-center">
+                <h3 style=" font-family: 'Poppins', sans-serif;">Update Student Data</h3>
+            </div>
+            <form method="POST">
+              {% csrf_token %}
+                <div class="mb-3 mt-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" value="{{freg.name}}" placeholder="Enter Name" name="name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Father Name:</label>
+                    <input type="text" class="form-control" value="{{freg.fname}}" placeholder="Enter Father Name" name="fname">
+                  </div>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Mother Name:</label>
+                    <input type="text" class="form-control" value="{{freg.mname}}" placeholder="Enter Mother Name" name="mname">
+                  </div>
+                  <div class="mb-3">
+                    <label for="number" class="form-label">Phone No.:</label>
+                    <input type="number" class="form-control" value="{{freg.phone_no}}" placeholder="Enter Phone No." name="phoneno">
+                  </div>
+                  <div class="mb-3">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="textfield" class="form-control" value="{{freg.add}}" placeholder="Enter Address" name="add">
+                  </div>
+                  <div class="mb-3">
+                    <label for="city" class="form-label">City:</label>
+                    <select class="form-select" name="city">
+                      {% if freg.city == "---Select City---" %}
+                        <option selected>---Select City---</option>
+                      {% else %}
+                        <option>---Select City---</option>
+                      {% endif %}
+                      {% if freg.city == "Delhi" %}
+                        <option selected>Delhi</option>
+                      {% else %}
+                        <option>Delhi</option>
+                      {% endif %}
+                      {% if freg.city == "Uttar Pradesh" %}
+                        <option selected>Uttar Pradesh</option>
+                      {% else %}
+                        <option>Uttar Pradesh</option>
+                      {% endif %}
+                      {% if freg.city == "Harayana" %}
+                        <option selected>Harayana</option>
+                      {% else %}
+                        <option>Harayana</option>
+                      {% endif %}
+                      {% if freg.city == "Punjab" %}
+                        <option selected>Punjab</option>
+                      {% else %}
+                        <option>Punjab</option>
+                      {% endif %}
+                      {% if freg.city == "Himachal Pradesh" %}
+                        <option selected>Himachal Pradesh</option>
+                      {% else %}
+                        <option>Himachal Pradesh</option>
+                      {% endif %}
+                      {% if freg.city == "Uttrakhand" %}
+                        <option selected>Uttrakhand</option>
+                      {% else %}
+                        <option>Uttrakhand</option>
+                      {% endif %}
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="gender" class="form-label">Gender:</label>
+                    <div class="form-check">
+                      {% if freg.gender == "male" %}
+                        <input type="radio" class="form-check-input" id="gender1" name="gender" value="male" checked>
+                      {% else %}
+                        <input type="radio" class="form-check-input" id="gender1" name="gender" value="male">
+                      {% endif %}
+                        <label class="form-check-label" for="gender1">Male</label>
+                    </div>
+                    <div class="form-check">
+                      {% if freg.gender == "female" %}
+                        <input type="radio" class="form-check-input" id="gender2" name="gender" value="female" checked>
+                      {% else %}
+                        <input type="radio" class="form-check-input" id="gender2" name="gender" value="female">
+                      {% endif %}
+                        <label class="form-check-label" for="gender2">Female</label>
+                    </div>
+                    <div class="form-check">
+                      {% if freg.gender == "Transgender" %}
+                        <input type="radio" class="form-check-input" id="gender3" name="gender" value="Transgender" checked>
+                      {% else %}
+                        <input type="radio" class="form-check-input" id="gender3" name="gender" value="Transgender">
+                      {% endif %}
+                        <label class="form-check-label" for="gender3">Transgender</label>
+                    </div>                      
+                  </div>
+                  <div class="mb-3">
+                    <label for="course" class="form-label">Course:</label>
+                    <select class="form-select" name="course">
+                      {% if freg.course == "---Select Course---" %}
+                        <option selected>---Select Course---</option>
+                      {% else %}
+                        <option>---Select Course---</option>
+                      {% endif %}
+                      {% if freg.course == "Python Full Stack" %}
+                        <option selected>Python Full Stack</option>
+                      {% else %}
+                        <option>Python Full Stack</option>
+                      {% endif %}
+                      {% if freg.course == "Java Full Stack" %}
+                        <option selected>Java Full Stack</option>
+                      {% else %}
+                        <option>Java Full Stack</option>
+                      {% endif %}
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="batchtime" class="form-label">Batch Time:</label>
+                    <select class="form-select" name="btime">
+                      {% if freg.btime == "---Select Batch Time---" %}
+                        <option selected>---Select Batch Time---</option>
+                      {% else %}
+                        <option>---Select Batch Time---</option>
+                      {% endif %}
+                      {% if freg.btime == "11:30 AM - 12:30 PM" %}
+                        <option selected>11:30 AM - 12:30 PM</option>
+                      {% else %}
+                        <option>11:30 AM - 12:30 PM</option>
+                      {% endif %}
+                      {% if freg.btime == "2:30 PM - 3:30 PM" %}
+                        <option selected>2:30 PM - 3:30 PM</option>
+                      {% else %}
+                        <option>2:30 PM - 3:30 PM</option>
+                      {% endif %}
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="fee" class="form-label">Upload Photo:</label>
+                    <input type="file" class="form-control" value="{{freg.photo}}" placeholder="Upload Photo" name="photo">
+                  </div>
+                  <div class="mb-3">
+                    <label for="fee" class="form-label">Total Fee:</label>
+                    <input type="number" class="form-control" value="{{freg.fee}}" placeholder="Enter Total Fee" name="fee">
+                  </div>
+                  <button type="submit" class="mb-2 btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <!--Main End-->
+{% include "footer.html" %}

@@ -1,0 +1,21 @@
+{% include "header.html" %}
+      <!--Main-->
+      <div class="container my-5 border border-5" >
+        <h3 style=" font-family: 'Poppins', sans-serif;">View Fee</h3>
+        ​<table class="table table-light table-striped" >
+            <tr>
+                <th>name</th>
+                <th>phone. no.</th>
+                <th>fee.</th>
+                <th>rem. fee.</th>
+            </tr>
+            <tr>
+                <td>{{fee.name}}</td>
+                <td>{{fee.phone_no}}</td>
+                <td>{{fee.fee}}</td>
+                <td>{{fee.remfee}}</td>
+            </tr>
+        </table>
+      </div>
+      <!--Main End-->
+      {% include "footer.html" %}

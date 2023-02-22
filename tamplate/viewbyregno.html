@@ -1,0 +1,17 @@
+{% include "header.html" %}
+<!--Main-->
+<div class="container my-5 border border-5" style="height: 370px;">
+    <div class="mt-3 jumbotron justify-content-center">
+        <h3 style=" font-family: 'Poppins', sans-serif;">View Student by Registration No.</h3>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3 mt-3">
+            <label for="batchtime" class="form-label">Enter Registration No. :</label>
+            <input type="text" class="form-control" name="regno" placeholder="Enter Registration No."> 
+        </div>
+        <button type="submit" class="mb-2 btn btn-primary">Submit</button>
+    </form>
+  </div>
+<!--Main End-->
+{% include "footer.html" %}

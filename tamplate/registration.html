@@ -1,0 +1,84 @@
+{% include "header.html" %}
+        <!--Main-->
+        <div class="container border border-3" style="width:70%;">
+            <div class="mt-3 jumbotron justify-content-center">
+                <h3 style=" font-family: 'Poppins', sans-serif;">Register Student</h3>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="mb-3 mt-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Father Name:</label>
+                    <input type="text" class="form-control" id="fathername" placeholder="Enter Father Name" name="fname">
+                  </div>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Mother Name:</label>
+                    <input type="text" class="form-control" id="mothername" placeholder="Enter Mother Name" name="mname">
+                  </div>
+                  <div class="mb-3">
+                    <label for="number" class="form-label">Phone No.:</label>
+                    <input type="number" class="form-control" id="phoneno" placeholder="Enter Phone No." name="phoneno">
+                  </div>
+                  <div class="mb-3">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="textfield" class="form-control" id="address" placeholder="Enter Address" name="address">
+                  </div>
+                  <div class="mb-3">
+                    <label for="city" class="form-label">City:</label>
+                    <select class="form-select" name="city">
+                        <option selected>---Select City---</option>
+                        <option>Delhi</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Harayana</option>
+                        <option>Punjab</option>
+                        <option>Himachal Pradesh</option>
+                        <option>Uttrakhand</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="gender" class="form-label">Gender:</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="gender1" name="gender" value="male" checked>
+                        <label class="form-check-label" for="gender1">Male</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="radio" class="form-check-input" id="gender2" name="gender" value="female">
+                        <label class="form-check-label" for="gender2">Female</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="radio" class="form-check-input" id="gender3" name="gender" value="Transgender">
+                        <label class="form-check-label" for="gender3">Transgender</label>
+                      </div>                      
+                  </div>
+                  <div class="mb-3">
+                    <label for="course" class="form-label">Course:</label>
+                    <select class="form-select" name="course">
+                        <option selected>---Select Course---</option>
+                        <option>Python Full Stack</option>
+                        <option>Java Full Stack</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="batchtime" class="form-label">Batch Time:</label>
+                    <select class="form-select" name="btime">
+                        <option selected>---Select Batch Time---</option>
+                        <option>11:30 AM - 12:30 PM</option>
+                        <option>2:30 PM - 3:30 PM</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="photo" class="form-label">Upload Photo:</label>
+                    <input type="file" class="form-control" id="file" placeholder="Upload Photo" name="photo">
+                  </div>
+                  <div class="mb-3">
+                    <label for="fee" class="form-label">Total Fee:</label>
+                    <input type="number" class="form-control" id="fee" placeholder="Enter Total Fee" name="fee">
+                  </div>
+                  <button type="submit" class="mb-2 btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <!--Main End-->
+{% include "footer.html" %}

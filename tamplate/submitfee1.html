@@ -1,0 +1,32 @@
+{% include "header.html" %}
+      <!--Main-->
+      <div class="container my-5 border border-5" >
+        <h3 style=" font-family: 'Poppins', sans-serif;">Submit Fee</h3>
+        ​<table class="table table-light table-striped" >
+            <tr>
+                <th>Amount</th>
+                <td>{{feedata.name}}</td>
+            </tr>
+            <tr>
+                <th>Phone No.</th>
+                <td>{{feedata.phone_no}}</td>
+            </tr>
+            <tr>
+                <th>rem fee</th>
+                <td>{{feedata.remfee}}</td>
+            </tr>
+            <form method='POST'>
+                {% csrf_token %}
+            <tr>
+                <th>Fee</th>
+                <td><input type="number" name="fee" placeholder="Enter Fee Amount"></td>
+            </tr>
+            <tr>
+                <th>Submit</th>
+                <td><button type="submit" class="mb-2 btn btn-primary">Submit</button></td>
+            </tr>
+        </table>
+        </form>
+      </div>
+      <!--Main End-->
+      {% include "footer.html" %}
